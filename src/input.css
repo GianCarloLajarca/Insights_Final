@@ -1,0 +1,437 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[90rem] p-6 w-full mx-auto;
+}
+
+@layer components {
+
+    /* --------------------------BANNER--------------------------------- */
+    .banner {
+        @apply bg-insightBanner
+        bg-cover
+        h-screen
+        bg-pula 
+        flex
+        text-center;
+    }
+
+    /* .banner .banner__content .banner__btn a {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.25rem;
+        max-width: 9rem;
+    } */
+
+    /* ----------------------------------SERVICES------------------------------------- */
+    .services  {
+        @apply py-7;
+    }
+
+    .services h2 {
+        @apply text-4xl text-center font-bold text-pula mb-3 md:text-justify;
+    }
+
+    .services p {
+        @apply text-center md:text-justify;
+    }
+
+    .services .services__wrapper {
+        @apply grid grid-cols-1 gap-10 mt-12 md:grid md:grid-cols-3;
+    }
+
+    .services__details {
+        @apply md:hover:scale-110 border-2 rounded-lg md:transition-all 
+    }
+    
+    .services .services__wrapper .services__card {
+        @apply flex flex-col 
+    } 
+
+    .services .services__wrapper .services__card .services__text {
+        @apply flex flex-col gap-5 border-b-2 border-pula px-8 py-8;
+    }
+
+    .services .services__wrapper .services__card .services__text h3 {
+        @apply text-2xl text-center font-semibold;
+    }
+
+    .services .services__wrapper .services__card .services__text p {
+        @apply text-justify;
+    }
+
+    .services .services__wrapper .services__card .services__text ul {
+        @apply list-disc max-h-32 mx-auto pb-10;
+    }
+
+    .services .services__wrapper .services__card .services__more {
+        @apply text-center md:bg-transparent md:text-pula 
+        group-hover:bg-pula group-hover:text-light
+        w-full absolute;
+    }
+
+    .services .services__wrapper .services__card .services__more a{
+        @apply max-w-full mx-auto;
+    }
+
+
+/* ----------------------------------PROJECTS------------------------------------- */
+.projects__wrapper {
+    @apply text-light
+    grid grid-cols-1 gap-[3rem] md:grid-cols-3 md:gap-0
+}
+
+.projects__card {
+    @apply min-h-[50rem] max-w-full bg-no-repeat bg-cover flex justify-center items-center
+    relative z-0 ;
+}
+
+.projects__card::before {
+    @apply md:bg-black opacity-50 -z-20 content-[""] w-full h-full absolute
+        top-0 md:origin-center md:duration-500 md:ease-in-out md:hover:scale-0; 
+}
+
+/* ADDED */
+/* .projects__card:hover::before {
+    opacity: 0;
+} */
+
+.project__card__details {
+    @apply flex flex-col gap-6 items-center justify-center 
+    opacity-100 md:opacity-0 group-hover:opacity-100 transition-all
+    /* ADDED */
+    md:inset-0 md:absolute md:opacity-0 md:transition md:duration-500 md:ease-in-out 
+    md:hover:opacity-100
+}
+
+.project__card__details::before {
+    @apply bg-black opacity-50 -z-10 content-[""] w-[30rem] h-96 absolute
+    top-[13rem]
+}
+
+.project__card__details h3 {
+    @apply font-semibold text-3xl text-center 
+}
+
+.project__card__details p {
+    @apply font-normal text-justify mb-8 text-wrap text-lg px-[2rem]
+}
+
+.project__card__details a {
+    @apply py-[0.5rem] px-[1rem] rounded-2xl w-[10rem] text-center hover:text-pula hover:bg-light
+}
+
+.projects .projects__wrapper .projects__card:first-child {
+    @apply bg-projects1
+    object-cover
+}
+
+.projects .projects__wrapper .projects__card:nth-child(2) {
+    @apply bg-projects2
+    object-cover
+}
+
+.projects .projects__wrapper .projects__card:last-child {
+    @apply bg-projects3
+    object-cover
+}
+
+
+/* ----------------------------------CONTACTS------------------------------------- */
+.contacts {
+    @apply pt-12 mb-10 md:h-[36rem] md:relative
+}
+.contacts__title {
+    @apply text-center mb-10 md:text-left;
+}
+
+.contacts__title h2 {
+    @apply text-pula font-bold text-4xl 
+    text-center 
+    font-bold 
+    md:text-justify
+    mb-3;
+}
+
+.contacts__title p {
+    @apply text-center mt-2 md:text-justify;
+}
+
+.contacts__wrapper {
+    @apply flex flex-col-reverse justify-center md:flex 
+    md:flex-row md:justify-start md:gap-24 md:absolute
+}
+
+.contacts__form {
+    @apply border-2 border-gray-100 p-5 rounded-xl shadow-md 
+    md:w-[30rem] md:pb-7 md:bg-light md:z-50 md:p-9
+}
+
+.contacts__form input, textarea {
+    @apply border-2 border-gray-300 rounded-md py-2 outline-none pl-[10px];
+}
+
+.contacts__form form {
+    @apply flex flex-col gap-3
+}
+
+.btn.submit {
+    @apply ml-auto p-[0.5rem] w-[10rem] rounded-3xl bg-pula text-light border-none
+}
+
+.contacts__details {
+    @apply mb-16;
+}
+
+.contacts__details ul {
+    @apply flex flex-col gap-5;
+}
+
+.contacts__icons {
+    @apply flex flex-row flex gap-3 items-center
+}
+
+.contacts__icons i {
+    @apply text-pula text-xl;
+}
+
+
+
+
+/* ----------INPUT WRAP------------- */
+.contact .contact__wrapper .contact__form .input-wrap {
+    @apply flex relative mb-[1rem] flex-col border-2 rounded-md md:px-44;
+}
+
+.contact .contact__wrapper .contact__form .input-wrap input {
+    @apply w-full p-[1rem] border-none border-b-[1px] outline-none
+    bg-transparent text-dark md:px-[5rem] 
+    
+}
+.contact .contact__wrapper .contact__form .input-wrap textarea {
+    @apply w-full p-[1rem] border-none border-b-[1px] outline-none
+    bg-transparent text-dark
+}
+
+.contact .contact__wrapper .contact__form .input-wrap label {
+    @apply absolute top-[1rem] opacity-50 text-lg transition-all
+    text-dark
+}
+
+/* ----------CONTACT FORM------------- */
+.contact__form {
+    @apply mb-[5rem] pt-6 border-2 rounded-lg p-5 mt-14
+    md:pt-16 md:mt-20 drop-shadow-lg;
+}
+
+.contact__form .contact__button {
+    @apply flex flex-row justify-end;
+}
+
+.contact__form .contact__button button{
+    @apply flex flex-row justify-center
+    min-w-[10rem] py-[.5rem] px-[.5rem] 
+    border-none
+    bg-pula text-light  
+    rounded-full 
+
+}
+
+    /* ----------------------------------HEADER------------------------------------- */
+
+    .header__action {
+        @apply flex flex-col bg-dark absolute top-[6.2rem] right-0 w-0 h-[90vh] px-0 pt-0 overflow-hidden transition-all 
+        shadow-md lg:static lg:h-fit lg:w-fit items-center lg:shadow-none md:bg-transparent;
+    }
+
+
+    .header__action.open {
+        @apply fixed w-[100%] h-screen top-0 left-0 w-full h-full px-10 pt-10 transition-all;
+        z-index: 49;
+    } 
+
+    .header__action .header__nav {
+        @apply pb-5 flex flex-col gap-5 lg:hidden;
+    }
+
+    .header__action .header__logo {
+        @apply flex flex-row justify-center lg:hidden mt-6
+    }
+
+    .header__action .header__icons {
+        @apply flex flex-row justify-center gap-5 lg:hidden mt-6
+    }
+
+    .header__action .header__icons i:first-child {
+        @apply px-5 py-5 hover:text-yellow-500 hover:bg-light;
+    }
+
+    .header__action .header__icons i:nth-child(2) {
+        @apply px-5 py-5 hover:text-blue-400 hover:bg-light;
+    }
+
+    .header__action .header__icons i:last-child {
+        @apply px-5 py-5 hover:text-blue-800 hover:bg-light;
+    }
+    
+
+    .header__action .header__icons i {
+        @apply text-xl text-light
+    }
+
+    .header__action .header__nav li:hover a {
+        @apply text-pula;
+    }
+
+    .header__action .header__nav li a {
+        @apply font-medium text-xl text-light px-7 py-4 hover:bg-light;
+    }
+    .header__action .header__nav {
+        @apply border-b-gray-400
+        pb-5 flex flex-col gap-5;
+    }
+
+    .header__action .header__nav ul {
+        @apply flex flex-col gap-5 pt-36 md:flex md:flex-row md:gap-3 md:pt-2;
+    }
+
+    .header__action .header__nav li:hover a {
+        @apply text-pula;
+    }
+
+    .header__action .header__nav li a {
+        @apply font-medium text-xl text-light;
+    }
+
+    /* ----------------------------------BURGER MENU------------------------------------- */
+
+    .burgir__menu {
+        @apply lg:hidden relative z-50 block;
+    }
+
+    .burgir__menu span {
+        @apply w-[1.5rem] h-[.3rem] bg-light block rounded-full transition-all;
+    }
+    .burgir__menu span:nth-child(2) {
+        @apply my-1;
+    }
+    .header__wrapper {
+        @apply flex items-center justify-between relative z-10;
+    }
+    .burgir__menu.open span:first-child {
+        @apply transform translate-y-[10px] rotate-[225deg] transition-all;
+    }
+
+    .burgir__menu.open span:nth-child(2) {
+        @apply opacity-0 transition-all;
+    }
+
+    .burgir__menu.open span:last-child {
+        @apply transform translate-y-[-6px] rotate-[-225deg] transition-all;
+    }
+
+    .header__action.open .burgir__menu {
+        @apply block;
+    }
+
+
+    /* --------------------BANNER CONTENT--------------------------- */
+
+    .banner .banner__content {
+        @apply flex flex-col justify-center items-center gap-5 mt-36;
+    }
+
+    .banner .banner__content .banner__btn a {
+        @apply max-w-60 mx-auto mb-5 md:mr-5 
+    }
+
+    .banner .banner__content h1{
+        @apply text-3xl text-light text-center mb-8 md:text-8xl;
+    }
+
+/* ----------------------------------FOOTER------------------------------------- */
+.footer {
+    @apply py-4 md:z-0 md:relative md:pt-10 
+    bg-[#8b8a8b] text-light;
+}
+
+.footer_wrapper {
+    @apply flex flex-col gap-3 justify-center items-center md:flex-row md:justify-between
+}
+
+}
+
+@layer utilities {
+.btn {
+    @apply inline-block p-[1rem] rounded-full border-transparent border-[1px] 
+    text-lg font-normal py-[0.8rem] px-[7rem];
+}
+
+.btn.bg--light {
+    @apply border-light 
+}
+
+
+}
+
+    @layer utilities {
+        .btn {
+            @apply inline-block py-[.5rem] px-[.5rem] rounded-full border-transparent border-[1px] 
+            text-sm font-medium hover:scale-[1.1]
+        }
+
+        .btn.bg--dark {
+            @apply bg-dark text-light;
+        }
+    
+        .btn.bg--light {
+            @apply bg-light text-dark border-dark border-[1px];
+        }
+    
+        .btn.bg--transparent {
+            @apply bg-transparent text-light border-light border-[1px] w-96
+            h-full py-[10px] px-[16px];
+        }
+        
+        .btn.bg--pula {
+            @apply bg-pula text-light w-96
+            h-1/2 py-[10px] px-[16px];
+        }
+
+        .btn--banner {
+            @apply inline-block py-[.5rem] px-[.5rem] rounded-full border-transparent border-[1px] 
+            text-sm font-medium hover:bg-light hover:text-pula;
+        }
+
+        .btn--banner.bg--transparent {
+            @apply bg-transparent text-light border-light border-[1px] w-[10rem]
+            h-full py-[10px] px-[16px] hover:bg-light hover:text-pula
+            text-lg;
+        }
+
+        .btn--banner.bg--pula {
+            @apply bg-pula text-light w-[10rem]
+            h-1/2 py-[10px] px-[16px] hover:bg-light hover:text-pula
+            text-lg;
+        }
+
+        .btn--services {
+            @apply inline-block  border-transparent border-[1px]
+            text-sm font-medium group-hover:bg-pula group-hover:text-light
+        }
+
+        .btn--services.bg--pula {
+            @apply bg-transparent text-pula py-4 w-full text-center;
+        }
+
+        .btn--projects {
+            @apply inline-block py-[.5rem] px-[.5rem] rounded-full border-transparent border-[1px] 
+            text-sm font-medium
+        }
+
+        .btn--projects.bg--pula {
+            @apply text-light bg-pula hover:bg-light hover:text-pula 
+        }
+}
